@@ -63,9 +63,25 @@ Future improvements may include:
 
 ---
 
+## Requirements
+- Python
+- pandas
+- scikit-learn
+
+---
+
+## How to Run
+1. Open the notebook
+2. Run all cells
+   
+---
+
 ## 👤 Author
 
 Majed Hamad  
 Medical Doctor transitioning into Clinical AI  
+
+---
+
 
 Focused on building intelligent systems that bridge medicine and machine learning.
