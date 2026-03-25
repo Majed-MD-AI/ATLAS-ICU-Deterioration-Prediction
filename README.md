@@ -1,6 +1,6 @@
 # ATLAS - ICU Deterioration Prediction
 
-A simple machine learning project aimed at predicting early signs of patient deterioration in the ICU using basic clinical features.
+A foundational machine learning project focused on early detection of ICU patient deterioration using basic clinical features.
 
 ---
 
