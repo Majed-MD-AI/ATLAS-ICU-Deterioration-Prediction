@@ -63,14 +63,14 @@ Future improvements may include:
 
 ---
 
-## Requirements
-- Python
-- pandas
-- scikit-learn
+## ⚙️ Requirements
+* Python
+* pandas
+* scikit-learn
 
 ---
 
-## How to Run
+## 🚀 How to Run
 1. Open the notebook
 2. Run all cells
    
