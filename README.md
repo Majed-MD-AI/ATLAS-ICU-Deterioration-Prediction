@@ -81,7 +81,4 @@ Future improvements may include:
 Majed Hamad  
 Medical Doctor transitioning into Clinical AI  
 
----
-
-
 Focused on building intelligent systems that bridge medicine and machine learning.
