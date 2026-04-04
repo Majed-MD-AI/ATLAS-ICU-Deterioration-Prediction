@@ -1,103 +1,106 @@
-# ATLAS — Clinical AI for Early Patient Deterioration
+## 🧠 ATLAS — Clinical AI for Early Patient Deterioration
 
-ATLAS is a clinical AI prototype designed to explore early detection of patient deterioration in critical care settings using interpretable machine learning and simple clinical features.
+ATLAS is a clinical AI prototype focused on early detection of patient deterioration in ICU settings.
 
-Rather than focusing solely on model performance, this project emphasizes clinical reasoning, data limitations, and real-world applicability of AI systems in healthcare.
+This project is designed from a clinician's perspective, emphasizing:
+- Interpretability over black-box performance  
+- Clinical reasoning over pure metrics  
+- Real-world applicability over idealized results  
 
----
-
-## 🧠 Motivation
-
-During clinical practice in emergency and ICU settings, early signs of patient deterioration are often present but not systematically utilized.
-
-This project was built to explore how machine learning can assist in identifying these early warning signals and support clinical decision-making.
+Rather than optimizing for accuracy alone, ATLAS explores how machine learning can support meaningful clinical decision-making.
 
 ---
 
-## ⚙️ Project Overview
+## 🚀 Current Version
 
-This prototype uses a small subset of clinical data (MIMIC-IV demo) and focuses on:
-
-- Vital signs (HR, SBP, SpO2, RR)
-- Derived features (Shock Index, Oxygen-related indicators)
-- Simple baseline models:
-  - Logistic Regression
-  - Random Forest
-
-The goal is to simulate a clinical early warning system, not just a prediction model.
+ATLAS v0.3 — includes:
+- Feature engineering from vital signs (HR, SBP, SpO2)
+- Clinical trend-based features
+- Identification and handling of data leakage
+- Baseline logistic regression model
 
 ---
 
-## 📊 Key Results & Observations
+## 📊 Project Overview
 
-- Initial experiments produced artificially high performance (accuracy ≈ 1.0)
-- Investigation revealed data leakage due to improper feature construction
+This project explores how machine learning can be applied to detect early warning signs of patient deterioration in critical care settings.
 
-⚠️ This was a critical turning point in the project.
-
-After correcting for leakage:
-
-- Model performance dropped to more realistic levels (~0.7 accuracy)
-- Positive class detection remained limited due to severe class imbalance
+The current version focuses on building a simple, interpretable baseline model using limited clinical features, while highlighting key challenges such as data leakage and small dataset limitations.
 
 ---
 
-## ⚠️ Limitations
+## 🏥 Clinical Perspective
 
-This project intentionally highlights real-world challenges:
+In real-world ICU environments, early detection of deterioration can significantly impact patient outcomes.
 
-- Small dataset (MIMIC demo)
-- Severe class imbalance
-- Limited generalizability
-- Simplified feature set
-
-These limitations are part of the learning process, not just constraints.
+This project reflects a simplified version of a larger vision:  
+Building intelligent systems that assist clinicians in making faster, safer, and more informed decisions.
 
 ---
 
-## 🧪 Clinical Perspective
+## ⚙️ Implementation
 
-In real ICU environments, early detection of deterioration can significantly impact patient outcomes.
-
-ATLAS reflects an early-stage attempt to bridge the gap between:
-
-- Data availability  
-- Clinical usability  
-- Decision support systems  
-
----
-
-## 🚀 Future Directions
-
-This project is part of a broader vision to develop clinically integrated AI systems.
-
-Next steps may include:
-
-- Incorporating time-series modeling  
-- Using larger real-world datasets  
-- Improving feature engineering (labs, trends)  
-- Designing actionable risk scoring systems  
-- Moving toward real clinical deployment  
+The workflow includes:
+- Data preparation using pandas  
+- Feature engineering from vital signs  
+- Train-test split  
+- Model training using logistic regression  
+- Performance evaluation  
 
 ---
 
-## 🛠️ Tech Stack
+## 📈 Results
+
+- Initial accuracy reached artificially high levels due to data leakage  
+- After fixing leakage, performance dropped to more realistic levels (~0.7 accuracy)  
+- Model behavior became more aligned with clinical expectations  
+
+---
+
+## ⚠️ Data Leakage (Critical Finding)
+
+The initial model achieved extremely high accuracy (~1.0), which appeared unrealistic.
+
+Upon investigation, it was found that the outcome variable was indirectly derived from one of the input features (shock index), leading to data leakage.
+
+This highlighted the importance of proper outcome definition and strict separation between features and labels in clinical machine learning tasks.
+
+---
+
+## 💡 Key Insight
+
+This was a critical learning point:
+
+> Building clinical AI systems is not just about model performance.  
+> It requires careful understanding of data, feature construction, and clinical reasoning.
+
+This experience highlights the importance of validating assumptions and avoiding misleading results in healthcare applications.
+
+---
+
+## 🔄 Next Step
+
+Replace the temporary leakage-based outcome with a real clinical endpoint (e.g., mortality or deterioration event), then retrain the ATLAS feature-based model.
+
+---
+
+## 🧪 Tech Stack
 
 - Python  
-- Pandas  
-- Scikit-learn  
+- pandas  
+- scikit-learn  
 - Jupyter Notebook  
 
 ---
 
 ## ▶️ How to Run
 
-1. Open the notebook:
-2. 2. Run all cells
+1. Open the notebook  
+2. Run all cells  
 
 ---
 
-## 👨‍⚕️ Author
+## 👤 Author
 
 Majed Hamad  
 Medical Doctor transitioning into Clinical AI  
@@ -111,4 +114,3 @@ Focused on building intelligent systems that bridge medicine and machine learnin
 ATLAS is currently under active development (v0.3).
 
 This version focuses on building a clinically meaningful baseline system, with emphasis on interpretability, data limitations, and real-world applicability rather than pure performance.
-
